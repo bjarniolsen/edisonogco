@@ -217,3 +217,48 @@ function foodie_pro_footer_creds_text( $creds ) {
 		__( 'Powered by ', 'foodiepro' )
 	);
 }
+
+
+/*
+ * Custom buy button
+ * */
+
+add_action( 'wp_enqueue_scripts', 'custom_buy_button_enqueue_js' );
+
+function custom_buy_button_enqueue_js() {
+	$js_uri = get_stylesheet_directory_uri() . '/assets/js/';
+	// Add general purpose scripts.
+	wp_enqueue_script(
+		'custom_buy_button',
+		$js_uri . 'custom_buy_button.js',
+		array( 'jquery' ),
+		0.1,
+		true
+	);
+}
+
+function buy_button() {
+
+	$return_string = '<div class="edison-buy-button">';
+	$return_string .= '<button type="button" class="edison-buy-button__btn">Køb</button>';
+	//$return_string .= '<form action="' . get_permalink() . '">';
+	$return_string .= '<form action="sendmail.php" method="post">';
+	$return_string .= '<input type="hidden" name="url" value="' . get_permalink() . '"/>';
+	$return_string .= '<input type="text" name="name"/>';
+	$return_string .= '<input type="text" name="email"/>';
+	$return_string .= '<textarea name="message"></textarea>';
+	$return_string .= '<button type="submit">Test</button>';
+	$return_string .= '</form>';
+	$return_string .= '</div>';
+
+	return $return_string;
+}
+function register_shortcodes(){
+	add_shortcode('buy', 'buy_button');
+}
+add_action( 'init', 'register_shortcodes');
+
+
+
+
+
