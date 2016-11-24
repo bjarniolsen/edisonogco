@@ -241,7 +241,6 @@ function buy_button() {
 
 	$return_string = '<div class="edison-buy-button">';
 	$return_string .= '<button type="button" class="edison-buy-button__btn">Køb</button>';
-	//$return_string .= '<form action="' . get_permalink() . '">';
 	$return_string .= '<form action="sendmail.php" method="post">';
 	$return_string .= '<input type="hidden" name="url" value="' . get_permalink() . '"/>';
 	$return_string .= '<input type="text" name="name"/>';
