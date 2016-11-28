@@ -240,7 +240,7 @@ function custom_buy_button_enqueue_js() {
 function buy_button() {
 
 	$return_string = '<div class="edison-buy-button">';
-	$return_string .= '<button type="button" class="edison-buy-button__btn">Køb</button>';
+	$return_string .= '<button type="button" class="edison-buy-button__btn">Køb denne vare</button>';
 	$return_string .= '</div>';
 
 	return $return_string;

@@ -2702,6 +2702,15 @@ Custom buy button
 	border: 8px solid rgba(0,0,0,.3);
 }
 
+.edison-buy-button__btn {
+	color: #010101;
+	background-color: #b9d6a7;
+}
+
+.edison-buy-button__btn:hover {
+	background-color: #a5bf94;
+}
+
 p.edison-buy-button__manchet {
 	margin-bottom: 20px;
 }
