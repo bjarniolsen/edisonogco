@@ -2691,15 +2691,40 @@ Custom buy button
 .edison-buy-button__form {
 	position: absolute;
 	z-index: 10;
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%, -50%);
-	min-width: 300px;
-	max-width: 400px;
+	top: 1em;
+	right: 1em;
+	bottom: 1em;
+	left: 1em;
+	max-width: 100%;
 	height: auto;
-	padding: 40px;
 	background-color: white;
 	border: 8px solid rgba(0,0,0,.3);
+}
+
+.edison-buy-button__form > div {
+	overflow-y: auto;
+	height: 100%;
+	padding: 15px;
+}
+
+@media (min-width: 600px) {
+	.edison-buy-button__form {
+		top: 2em;
+		right: auto;
+		/*bottom: auto;*/
+		left: 50%;
+		-webkit-transform: translate(-50%, 0%);
+		-moz-transform: translate(-50%, 0%);
+		-o-transform: translate(-50%, 0%);
+		-ms-transform: translate(-50%, 0%);
+		transform: translate(-50%, 0%);
+		min-width: 300px;
+		max-width: 400px;
+	}
+
+	.edison-buy-button__form > div {
+		padding: 40px;
+	}
 }
 
 .edison-buy-button__btn {
@@ -2713,6 +2738,13 @@ Custom buy button
 
 p.edison-buy-button__manchet {
 	margin-bottom: 20px;
+	font-size: 14px;
+}
+
+@media (min-width: 600px) {
+	p.edison-buy-button__manchet {
+		font-size: 1em;
+	}
 }
 
 .edison-buy-button__form label {

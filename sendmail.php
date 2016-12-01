@@ -7,7 +7,7 @@ $to = array(
 	'bjarniolsen@gmail.com'
 );
 
-$subject = "Edison og Co bestilling af: " . $_POST['url'];
+$subject = "Reservation af vare";
 
 $message = $_POST['name'] . ' har skrevet angående denne vare: ' . $_POST['url'];
 $message .= "\r\n\r\n";
@@ -23,7 +23,7 @@ if (isset($_POST['message'])) {
 	$message .= "\r\n\r\n";
 }
 $message .= "\r\n";
-$message .= 'Denne email er sendt fra ' . $_POST['url'];
+//$message .= 'Denne email er sendt fra ' . $_POST['url'];
 
 $headers = array('Content-Type: text/plain; charset=UTF-8','From: ' . $_POST['name'] . ' <'. $_POST['email'] .'>');
 

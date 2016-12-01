@@ -50,9 +50,10 @@ var edison = edison || {};
 				var htmlTag = document.documentElement;
 				htmlTag.classList.add(configuration.className);
 				htmlTag.style.marginTop = 0 + "px";
-				//htmlTag.style.position = "fixed";
+				htmlTag.style.position = "fixed";
 				htmlTag.style.overflow = "hidden";
 				htmlTag.style.width = "100%";
+				htmlTag.style.height = "100%";
 
 				// Remember state
 				configuration.currentState = true;
@@ -65,9 +66,10 @@ var edison = edison || {};
 				var htmlTag = document.documentElement;
 				htmlTag.classList.remove(configuration.className);
 				htmlTag.style.marginTop = "";
-				//htmlTag.style.position = "";
+				htmlTag.style.position = "";
 				htmlTag.style.overflow = "";
 				htmlTag.style.width = "";
+				htmlTag.style.height = "";
 
 				// Set the scroll position to what it was before
 				window.scrollTo(configuration.currentWindowScrollPositionX, configuration.scrollTop);
@@ -107,25 +109,27 @@ var edison = edison || {};
 		function createForm() {
 
 			var return_string = '<form action="' + configuration.siteUrl + 'sendmail.php" method="post" class="edison-buy-button__form">';
+				return_string += '<div>';
 				return_string += '<button type="button" class="edison-buy-button__close">Luk</button>';
 				return_string += '<input type="hidden" name="url" value="' + configuration.productUrl + '"/>';
-				return_string += '<p class="edison-buy-button__manchet">Hej<br/>Udfyld felterne og så venter jeg tilbage.</p>';
+				return_string += '<p class="edison-buy-button__manchet">Tak for interessen.<br/>Udfyld venligst nedenstående felter for at reservere varen, og klik Send.<br/>Jeg kontakter dig angående betaling og forsendelse.</p>';
 				return_string += '<label>';
 				return_string += '<span>Navn</span>';
-				return_string += '<input type="text" name="name"/>';
+				return_string += '<input type="text" name="name" placeholder="Skriv dit navn her"/>';
 				return_string += '<span>Skriv venligst dit navn</span>';
 				return_string += '</label>';
 				return_string += '<label>';
 				return_string += '<span>E-mail</span>';
-				return_string += '<input type="text" name="email"/>';
+				return_string += '<input type="text" name="email" placeholder="Skriv din e-mail her"/>';
 				return_string += '<span>Skriv venligst din email</span>';
 				return_string += '</label>';
 				return_string += '<label>';
 				return_string += '<span>Bemærkninger</span>';
-				return_string += '<textarea name="message"></textarea>';
+				return_string += '<textarea name="message" placeholder="Skriv eventuelt en bemærkning her"></textarea>';
 				return_string += '</label>';
 				return_string += '<button type="submit" class="edison-buy-button__send">Send</button>';
-				return_string += '<p class="edison-buy-button__success">Tak for bestillingen. Jeg vender tilbage så hurtigt jeg kan.</p>';
+				return_string += '<p class="edison-buy-button__success">Tak for interessen. Jeg vender tilbage.</p>';
+				return_string += '</div>';
 				return_string += '</form>';
 
 			return $(return_string);
